@@ -1,17 +1,23 @@
 import React, {useEffect} from 'react';
-import {View, Text, Stylesheet} from 'react-native';
+import {View, Text, StyleSheet, ImageBackground} from 'react-native';
 
-const App = () => {
+const Easify = () => {
 
   return(
+  <ImageBackground
+      source={require("./assets/bg.jpeg")}
+      resizeMode="cover"
+      style={styles.backdrop}
+  >
   <View style={styles.container}>
   <Text style={styles.heading}> Easify v1.0.0 </Text>
   <Text style={styles.subheading}> Soon Will be Available </Text>
   </View>
+  </ImageBackground>
   );
 };
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
@@ -26,6 +32,11 @@ const styles = Stylesheet.create({
   subheading: {
     fontSize: 15,
   },
+
+  backdrop:{
+    flex:1,
+    flexDirection:"column"
+  }
 });
 
-export default App;
+export default Easify;
